@@ -1,5 +1,5 @@
 {
-  "name": "@gabrielgrijalva/request",
+  "name": "@gabrielgrijalva/rest-request",
   "version": "1.0.0",
   "description": "Simple REST request implementation.",
   "main": "./index.js",
