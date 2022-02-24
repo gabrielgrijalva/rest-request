@@ -8,7 +8,6 @@ import DeclarationsN = require('./declarations');
   * 
   * 
   */
-interface RestRequest {
+export = {
   send(params: DeclarationsN.requestParams): Promise<DeclarationsN.requestReturnParams>;
-}
-export = RestRequest;
+};
