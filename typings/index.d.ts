@@ -8,6 +8,4 @@ import DeclarationsN = require('./declarations');
   * 
   * 
   */
-export = {
-  send(params: DeclarationsN.requestParams): Promise<DeclarationsN.requestReturnParams>;
-};
+export function send(params: DeclarationsN.requestParams): Promise<DeclarationsN.requestReturnParams>;
