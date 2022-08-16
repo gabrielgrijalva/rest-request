@@ -1,3 +1,4 @@
+const http = require('http');
 const https = require('https');
 /**
  * @type {import('./typings/index')}
@@ -5,12 +6,13 @@ const https = require('https');
 const RestRequest = {
   send: (params) => {
     return new Promise(resolve => {
+      const protocol = params.url.includes('http:') ? http : https;
       let data = '';
       const options = {
         method: params.method,
         headers: params.headers,
       };
-      const req = https.request(params.url, options, (res) => {
+      const req = protocol.request(params.url, options, (res) => {
         res.setEncoding('utf8');
         res.on('data', (chunk) => data += chunk);
         res.on('end', () => {
