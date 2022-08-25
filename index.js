@@ -1,10 +1,10 @@
 const http = require('http');
 const https = require('https');
 /**
- * @type {import('./typings/index').RestRequest.restRequest}
+ * @type {import('./typings/index')}
  */
 const RestRequest = {
-  send: (params) => {
+  send(params) {
     return new Promise((resolve, reject) => {
       const protocol = params.url.includes('http:') ? http : https;
       let data = '';
