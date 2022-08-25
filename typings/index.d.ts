@@ -8,8 +8,4 @@ import { requestParams, requestResponse } from './params';
  * 
  * 
  */
-
-interface RestRequest {
-  send(params: requestParams): Promise<requestResponse>;
-}
-export = RestRequest;
+export function send(params: requestParams): Promise<requestResponse>;
