@@ -1,6 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [1.2.0] - 2022-08-25
+- Corrected errors.
+- Changed typings declarations.
 ## [1.1.0] - 2022-08-16
 - Added support for http protocol.
 ## [1.0.2] - 2022-02-25
