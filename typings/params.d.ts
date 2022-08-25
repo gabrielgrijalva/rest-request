@@ -23,7 +23,7 @@ export type requestParams = {
  * 
  */
 export type requestResponse = {
-  data: string;
+  data: any;
   status: number;
   headers: any;
 }
