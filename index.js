@@ -5,7 +5,7 @@ const https = require('https');
  */
 const RestRequest = {
   send: (params) => {
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
       const protocol = params.url.includes('http:') ? http : https;
       let data = '';
       const options = {
@@ -16,9 +16,7 @@ const RestRequest = {
         res.setEncoding('utf8');
         res.on('data', (chunk) => data += chunk);
         res.on('end', () => {
-          try {
-            data = JSON.parse(data);
-          } catch (error) { }
+          try { data = JSON.parse(data); } catch (error) { }
           resolve({
             data: data,
             status: res.statusCode,
@@ -26,10 +24,7 @@ const RestRequest = {
           });
         });
       });
-      req.on('error', (error) => {
-        console.log(`Problem with request: ${error.message}`);
-        throw error;
-      });
+      req.on('error', (error) => reject(error));
       req.end(params.data);
     });
   }
