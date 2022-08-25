@@ -1,7 +1,7 @@
 const http = require('http');
 const https = require('https');
 /**
- * @type {import('./typings/index')}
+ * @type {import('./typings/index').RestRequest.restRequest}
  */
 const RestRequest = {
   send: (params) => {
